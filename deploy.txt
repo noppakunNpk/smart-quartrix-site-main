@@ -1,0 +1,19 @@
+# Build ภาพสำหรับ dev (ใช้ .env.development)
+docker build \
+  --no-cache \
+  -t eudr-frontend:dev \
+  --build-arg VITE_MODE=development \
+  --build-arg NGINX_ENV=dev \
+  .
+
+docker run -d --name eudr-frontend_dev -p 5173:80 eudr-frontend:dev
+
+# Build ภาพสำหรับ prod (ใช้ .env.production)
+docker build \
+  --no-cache \
+  -t eudr-frontend:prod \
+  --build-arg VITE_MODE=production \
+  --build-arg NGINX_ENV=prod \
+  .
+
+docker run -d --name eudr-frontend_prod -p 5173:80 eudr-frontend:prod

@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  # Production environment
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        VITE_MODE: production
+        NGINX_ENV: prod
+    container_name: homepage
+    expose:
+      - 80
+    ports:
+      - "8888:80"
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=production
+    networks:
+      - eudr-stack_eudr-network
+
+  # Development environment (optional)
+  app-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        VITE_MODE: development
+        NGINX_ENV: dev
+    container_name: eudrthai-site-dev
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=development
+    networks:
+      - eudr-stack_eudr-network
+    profiles:
+      - dev
+
+networks:
+  eudr-stack_eudr-network:
+    external: true

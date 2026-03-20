@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  # Development with hot-reload
+  app-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+      args:
+        NODE_ENV: development
+    container_name: eudrthai-site-dev-hot
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./src:/app/src
+      - ./public:/app/public
+      - ./vite.config.ts:/app/vite.config.ts
+      - ./tsconfig.json:/app/tsconfig.json
+      - /app/node_modules
+    restart: unless-stopped
+    env_file:
+      - .env
+      - .env.development
+    environment:
+      - NODE_ENV=development
+      - VITE_HOST=0.0.0.0
+    networks:
+      - eudr-stack_eudr-network
+    command: pnpm dev
+
+networks:
+  eudr-stack_eudr-network:
+    external: true
