@@ -3,6 +3,7 @@ import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
 import appCss from '../styles.css?url'
 import { AppNavbar } from '@/components/layouts/AppNavbar'
 import { AppFooter } from '@/components/layouts/AppFooter'
+import { LanguageProvider } from '@/i18n'
 
 export const Route = createRootRoute({
   head: () => ({
@@ -41,9 +42,11 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       <body>
-        <AppNavbar />
-        {children}
-        <AppFooter />
+        <LanguageProvider>
+          <AppNavbar />
+          {children}
+          <AppFooter />
+        </LanguageProvider>
         <Scripts />
       </body>
     </html>

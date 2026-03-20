@@ -2,10 +2,12 @@ import { useState } from "react";
 import * as Icons from "lucide-react";
 import { hardwareServices, softwareServices } from "@/data/services";
 import type { Service } from "@/data/services";
+import { useLanguage } from "@/i18n";
+import type { Language } from "@/i18n";
 
 type TabKey = "hardware" | "software";
 
-function ServiceCard({ service }: { service: Service }) {
+function ServiceCard({ service, lang }: { service: Service; lang: Language }) {
   const IconComponent = Icons[service.icon as keyof typeof Icons] as React.ComponentType<{ className?: string }>;
 
   return (
@@ -20,10 +22,10 @@ function ServiceCard({ service }: { service: Service }) {
         )}
       </div>
       <h3 className="font-heading text-lg font-600 text-sq-text mb-2">
-        {service.title}
+        {service.title[lang]}
       </h3>
       <p className="text-sq-text-muted text-sm leading-relaxed">
-        {service.description}
+        {service.description[lang]}
       </p>
     </div>
   );
@@ -31,10 +33,11 @@ function ServiceCard({ service }: { service: Service }) {
 
 export default function ServicesSection() {
   const [activeTab, setActiveTab] = useState<TabKey>("hardware");
+  const { lang, t } = useLanguage();
 
   const tabs: { key: TabKey; label: string }[] = [
-    { key: "hardware", label: "Hardware Consulting" },
-    { key: "software", label: "Software Consulting" },
+    { key: "hardware", label: t.services.hardwareTab },
+    { key: "software", label: t.services.softwareTab },
   ];
 
   const services = activeTab === "hardware" ? hardwareServices : softwareServices;
@@ -43,14 +46,13 @@ export default function ServicesSection() {
     <div className="max-w-7xl mx-auto px-6 lg:px-8">
       <div className="text-center mb-12">
         <p className="text-sq-primary font-600 tracking-wide uppercase text-sm mb-3 font-heading">
-          Our Services
+          {t.services.badge}
         </p>
         <h2 className="font-heading text-4xl md:text-5xl font-700 text-sq-text mb-6">
-          What We Do
+          {t.services.title}
         </h2>
         <p className="text-sq-text-muted text-lg max-w-2xl mx-auto">
-          Comprehensive consulting across two core divisions — delivering end-to-end
-          solutions from concept to deployment.
+          {t.services.subtitle}
         </p>
       </div>
 
@@ -73,7 +75,7 @@ export default function ServicesSection() {
 
       <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
         {services.map((service) => (
-          <ServiceCard key={service.title} service={service} />
+          <ServiceCard key={service.title.en} service={service} lang={lang} />
         ))}
       </div>
     </div>

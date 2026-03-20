@@ -1,4 +1,5 @@
 import { Globe, Cpu, BarChart3, Workflow, Server } from 'lucide-react';
+import { useLanguage } from '@/i18n';
 
 const FloatingCard = ({
   icon,
@@ -28,6 +29,8 @@ const FloatingCard = ({
 );
 
 export const Visualizer = () => {
+  const { t } = useLanguage();
+
   return (
     <div className="relative w-full h-[500px] max-w-[600px] flex items-center justify-center">
 
@@ -42,38 +45,38 @@ export const Visualizer = () => {
       <div className="relative z-10 w-48 h-48 bg-gradient-to-br from-[#1E3A8A] to-[#0B1220] rounded-full shadow-2xl flex flex-col items-center justify-center border border-white/10">
         <Globe className="w-12 h-12 text-[#22D3EE] animate-pulse" />
         <div className="text-[10px] tracking-widest text-white/60 mt-2">
-          SMART CORE
+          {t.visualizer.center}
         </div>
       </div>
 
       {/* Floating Cards */}
       <FloatingCard
         icon={<Cpu className="w-5 h-5 text-[#8B5CF6]" />}
-        title="Software"
-        subtitle="Enterprise Systems"
+        title={t.visualizer.software}
+        subtitle={t.visualizer.softwareSub}
         iconBg="bg-[#8B5CF6]/10"
         className="top-10 right-10"
       />
       <FloatingCard
         icon={<BarChart3 className="w-5 h-5 text-[#22D3EE]" />}
-        title="Data & AI"
-        subtitle="Analytics Engine"
+        title={t.visualizer.dataAi}
+        subtitle={t.visualizer.dataAiSub}
         iconBg="bg-[#22D3EE]/10"
         className="top-10 left-10"
         delay="0.3s"
       />
       <FloatingCard
         icon={<Workflow className="w-5 h-5 text-[#38BDF8]" />}
-        title="Automation"
-        subtitle="Process Optimization"
+        title={t.visualizer.automation}
+        subtitle={t.visualizer.automationSub}
         iconBg="bg-[#38BDF8]/10"
         className="bottom-10 left-10"
         delay="0.6s"
       />
       <FloatingCard
         icon={<Server className="w-5 h-5 text-[#D4AF37]" />}
-        title="Hardware"
-        subtitle="Infra & Devices"
+        title={t.visualizer.hardware}
+        subtitle={t.visualizer.hardwareSub}
         iconBg="bg-[#D4AF37]/10"
         className="bottom-10 right-10"
         delay="0.9s"

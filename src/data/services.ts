@@ -1,59 +1,101 @@
+import type { BilingualText } from "./hardware-projects";
+
 export interface Service {
   icon: string;
-  title: string;
-  description: string;
+  title: BilingualText;
+  description: BilingualText;
 }
 
 export const hardwareServices: Service[] = [
   {
     icon: "Cpu",
-    title: "Embedded Systems Design",
-    description:
-      "Custom embedded solutions from prototype to production, including PCB design, firmware development, and hardware-software integration.",
+    title: {
+      en: "Embedded Systems Design",
+      th: "\u0e2d\u0e2d\u0e01\u0e41\u0e1a\u0e1a\u0e23\u0e30\u0e1a\u0e1a\u0e2a\u0e21\u0e2d\u0e07\u0e01\u0e25\u0e1d\u0e31\u0e07\u0e15\u0e31\u0e27",
+    },
+    description: {
+      en: "Custom embedded solutions from prototype to production, including PCB design, firmware development, and hardware-software integration.",
+      th: "\u0e42\u0e0b\u0e25\u0e39\u0e0a\u0e31\u0e19\u0e2a\u0e21\u0e2d\u0e07\u0e01\u0e25\u0e1d\u0e31\u0e07\u0e15\u0e31\u0e27\u0e41\u0e1a\u0e1a\u0e01\u0e33\u0e2b\u0e19\u0e14\u0e40\u0e2d\u0e07 \u0e15\u0e31\u0e49\u0e07\u0e41\u0e15\u0e48\u0e15\u0e49\u0e19\u0e41\u0e1a\u0e1a\u0e16\u0e36\u0e07\u0e01\u0e32\u0e23\u0e1c\u0e25\u0e34\u0e15 \u0e23\u0e27\u0e21\u0e16\u0e36\u0e07\u0e01\u0e32\u0e23\u0e2d\u0e2d\u0e01\u0e41\u0e1a\u0e1a PCB \u0e1e\u0e31\u0e12\u0e19\u0e32\u0e40\u0e1f\u0e34\u0e23\u0e4c\u0e21\u0e41\u0e27\u0e23\u0e4c \u0e41\u0e25\u0e30\u0e01\u0e32\u0e23\u0e1c\u0e2a\u0e32\u0e19\u0e2e\u0e32\u0e23\u0e4c\u0e14\u0e41\u0e27\u0e23\u0e4c-\u0e0b\u0e2d\u0e1f\u0e15\u0e4c\u0e41\u0e27\u0e23\u0e4c",
+    },
   },
   {
     icon: "Factory",
-    title: "Industrial Automation",
-    description:
-      "End-to-end automation consulting for manufacturing, including PLC programming, SCADA systems, and robotics integration.",
+    title: {
+      en: "Industrial Automation",
+      th: "\u0e23\u0e30\u0e1a\u0e1a\u0e2d\u0e31\u0e15\u0e42\u0e19\u0e21\u0e31\u0e15\u0e34\u0e2d\u0e38\u0e15\u0e2a\u0e32\u0e2b\u0e01\u0e23\u0e23\u0e21",
+    },
+    description: {
+      en: "End-to-end automation consulting for manufacturing, including PLC programming, SCADA systems, and robotics integration.",
+      th: "\u0e17\u0e35\u0e48\u0e1b\u0e23\u0e36\u0e01\u0e29\u0e32\u0e23\u0e30\u0e1a\u0e1a\u0e2d\u0e31\u0e15\u0e42\u0e19\u0e21\u0e31\u0e15\u0e34\u0e04\u0e23\u0e1a\u0e27\u0e07\u0e08\u0e23\u0e2a\u0e33\u0e2b\u0e23\u0e31\u0e1a\u0e01\u0e32\u0e23\u0e1c\u0e25\u0e34\u0e15 \u0e23\u0e27\u0e21\u0e16\u0e36\u0e07\u0e01\u0e32\u0e23\u0e40\u0e02\u0e35\u0e22\u0e19\u0e42\u0e1b\u0e23\u0e41\u0e01\u0e23\u0e21 PLC \u0e23\u0e30\u0e1a\u0e1a SCADA \u0e41\u0e25\u0e30\u0e01\u0e32\u0e23\u0e1c\u0e2a\u0e32\u0e19\u0e2b\u0e38\u0e48\u0e19\u0e22\u0e19\u0e15\u0e4c",
+    },
   },
   {
     icon: "Radio",
-    title: "IoT & Connectivity",
-    description:
-      "Designing and deploying IoT ecosystems with sensor networks, edge gateways, and secure cloud connectivity.",
+    title: {
+      en: "IoT & Connectivity",
+      th: "IoT \u0e41\u0e25\u0e30\u0e01\u0e32\u0e23\u0e40\u0e0a\u0e37\u0e48\u0e2d\u0e21\u0e15\u0e48\u0e2d",
+    },
+    description: {
+      en: "Designing and deploying IoT ecosystems with sensor networks, edge gateways, and secure cloud connectivity.",
+      th: "\u0e2d\u0e2d\u0e01\u0e41\u0e1a\u0e1a\u0e41\u0e25\u0e30\u0e15\u0e34\u0e14\u0e15\u0e31\u0e49\u0e07\u0e23\u0e30\u0e1a\u0e1a IoT \u0e1e\u0e23\u0e49\u0e2d\u0e21\u0e40\u0e04\u0e23\u0e37\u0e2d\u0e02\u0e48\u0e32\u0e22\u0e40\u0e0b\u0e47\u0e19\u0e40\u0e0b\u0e2d\u0e23\u0e4c Edge Gateway \u0e41\u0e25\u0e30\u0e01\u0e32\u0e23\u0e40\u0e0a\u0e37\u0e48\u0e2d\u0e21\u0e15\u0e48\u0e2d\u0e04\u0e25\u0e32\u0e27\u0e14\u0e4c\u0e17\u0e35\u0e48\u0e1b\u0e25\u0e2d\u0e14\u0e20\u0e31\u0e22",
+    },
   },
   {
     icon: "ScanEye",
-    title: "Quality Inspection Systems",
-    description:
-      "Machine vision and automated testing solutions for high-throughput quality control on production lines.",
+    title: {
+      en: "Quality Inspection Systems",
+      th: "\u0e23\u0e30\u0e1a\u0e1a\u0e15\u0e23\u0e27\u0e08\u0e2a\u0e2d\u0e1a\u0e04\u0e38\u0e13\u0e20\u0e32\u0e1e",
+    },
+    description: {
+      en: "Machine vision and automated testing solutions for high-throughput quality control on production lines.",
+      th: "\u0e42\u0e0b\u0e25\u0e39\u0e0a\u0e31\u0e19 Machine Vision \u0e41\u0e25\u0e30\u0e01\u0e32\u0e23\u0e17\u0e14\u0e2a\u0e2d\u0e1a\u0e2d\u0e31\u0e15\u0e42\u0e19\u0e21\u0e31\u0e15\u0e34 \u0e2a\u0e33\u0e2b\u0e23\u0e31\u0e1a\u0e04\u0e27\u0e1a\u0e04\u0e38\u0e21\u0e04\u0e38\u0e13\u0e20\u0e32\u0e1e\u0e1b\u0e23\u0e34\u0e21\u0e32\u0e13\u0e2a\u0e39\u0e07\u0e1a\u0e19\u0e2a\u0e32\u0e22\u0e01\u0e32\u0e23\u0e1c\u0e25\u0e34\u0e15",
+    },
   },
 ];
 
 export const softwareServices: Service[] = [
   {
     icon: "Cloud",
-    title: "Cloud Architecture",
-    description:
-      "Designing scalable, resilient cloud infrastructure on AWS, Azure, and GCP with cost optimization and security best practices.",
+    title: {
+      en: "Cloud Architecture",
+      th: "\u0e2a\u0e16\u0e32\u0e1b\u0e31\u0e15\u0e22\u0e01\u0e23\u0e23\u0e21\u0e04\u0e25\u0e32\u0e27\u0e14\u0e4c",
+    },
+    description: {
+      en: "Designing scalable, resilient cloud infrastructure on AWS, Azure, and GCP with cost optimization and security best practices.",
+      th: "\u0e2d\u0e2d\u0e01\u0e41\u0e1a\u0e1a\u0e42\u0e04\u0e23\u0e07\u0e2a\u0e23\u0e49\u0e32\u0e07\u0e1e\u0e37\u0e49\u0e19\u0e10\u0e32\u0e19\u0e04\u0e25\u0e32\u0e27\u0e14\u0e4c\u0e17\u0e35\u0e48\u0e02\u0e22\u0e32\u0e22\u0e44\u0e14\u0e49\u0e41\u0e25\u0e30\u0e17\u0e19\u0e17\u0e32\u0e19\u0e1a\u0e19 AWS, Azure \u0e41\u0e25\u0e30 GCP \u0e1e\u0e23\u0e49\u0e2d\u0e21\u0e01\u0e32\u0e23\u0e1b\u0e23\u0e31\u0e1a\u0e15\u0e49\u0e19\u0e17\u0e38\u0e19\u0e41\u0e25\u0e30\u0e04\u0e27\u0e32\u0e21\u0e1b\u0e25\u0e2d\u0e14\u0e20\u0e31\u0e22",
+    },
   },
   {
     icon: "BarChart3",
-    title: "Data & Analytics",
-    description:
-      "Building data pipelines, warehouses, and analytics dashboards that turn raw data into actionable business intelligence.",
+    title: {
+      en: "Data & Analytics",
+      th: "\u0e02\u0e49\u0e2d\u0e21\u0e39\u0e25\u0e41\u0e25\u0e30\u0e01\u0e32\u0e23\u0e27\u0e34\u0e40\u0e04\u0e23\u0e32\u0e30\u0e2b\u0e4c",
+    },
+    description: {
+      en: "Building data pipelines, warehouses, and analytics dashboards that turn raw data into actionable business intelligence.",
+      th: "\u0e2a\u0e23\u0e49\u0e32\u0e07 Data Pipeline, Data Warehouse \u0e41\u0e25\u0e30\u0e41\u0e14\u0e0a\u0e1a\u0e2d\u0e23\u0e4c\u0e14\u0e27\u0e34\u0e40\u0e04\u0e23\u0e32\u0e30\u0e2b\u0e4c \u0e40\u0e1e\u0e37\u0e48\u0e2d\u0e40\u0e1b\u0e25\u0e35\u0e48\u0e22\u0e19\u0e02\u0e49\u0e2d\u0e21\u0e39\u0e25\u0e14\u0e34\u0e1a\u0e40\u0e1b\u0e47\u0e19\u0e02\u0e49\u0e2d\u0e21\u0e39\u0e25\u0e40\u0e0a\u0e34\u0e07\u0e18\u0e38\u0e23\u0e01\u0e34\u0e08",
+    },
   },
   {
     icon: "BrainCircuit",
-    title: "AI & Machine Learning",
-    description:
-      "Developing and deploying ML models for document processing, predictive maintenance, demand forecasting, and process automation.",
+    title: {
+      en: "AI & Machine Learning",
+      th: "AI \u0e41\u0e25\u0e30 Machine Learning",
+    },
+    description: {
+      en: "Developing and deploying ML models for document processing, predictive maintenance, demand forecasting, and process automation.",
+      th: "\u0e1e\u0e31\u0e12\u0e19\u0e32\u0e41\u0e25\u0e30\u0e15\u0e34\u0e14\u0e15\u0e31\u0e49\u0e07\u0e42\u0e21\u0e40\u0e14\u0e25 ML \u0e2a\u0e33\u0e2b\u0e23\u0e31\u0e1a\u0e01\u0e32\u0e23\u0e1b\u0e23\u0e30\u0e21\u0e27\u0e25\u0e1c\u0e25\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23 \u0e01\u0e32\u0e23\u0e1a\u0e33\u0e23\u0e38\u0e07\u0e23\u0e31\u0e01\u0e29\u0e32\u0e40\u0e0a\u0e34\u0e07\u0e1e\u0e22\u0e32\u0e01\u0e23\u0e13\u0e4c \u0e01\u0e32\u0e23\u0e1e\u0e22\u0e32\u0e01\u0e23\u0e13\u0e4c\u0e04\u0e27\u0e32\u0e21\u0e15\u0e49\u0e2d\u0e07\u0e01\u0e32\u0e23 \u0e41\u0e25\u0e30\u0e2d\u0e2d\u0e42\u0e15\u0e40\u0e21\u0e0a\u0e31\u0e19\u0e01\u0e23\u0e30\u0e1a\u0e27\u0e19\u0e01\u0e32\u0e23",
+    },
   },
   {
     icon: "Layers",
-    title: "Enterprise Integration",
-    description:
-      "Connecting ERP, CRM, and legacy systems through modern APIs and middleware for seamless data flow across the organization.",
+    title: {
+      en: "Enterprise Integration",
+      th: "\u0e01\u0e32\u0e23\u0e40\u0e0a\u0e37\u0e48\u0e2d\u0e21\u0e15\u0e48\u0e2d\u0e23\u0e30\u0e1a\u0e1a\u0e2d\u0e07\u0e04\u0e4c\u0e01\u0e23",
+    },
+    description: {
+      en: "Connecting ERP, CRM, and legacy systems through modern APIs and middleware for seamless data flow across the organization.",
+      th: "\u0e40\u0e0a\u0e37\u0e48\u0e2d\u0e21\u0e15\u0e48\u0e2d\u0e23\u0e30\u0e1a\u0e1a ERP, CRM \u0e41\u0e25\u0e30\u0e23\u0e30\u0e1a\u0e1a\u0e40\u0e14\u0e34\u0e21\u0e1c\u0e48\u0e32\u0e19 API \u0e41\u0e25\u0e30 Middleware \u0e17\u0e31\u0e19\u0e2a\u0e21\u0e31\u0e22 \u0e40\u0e1e\u0e37\u0e48\u0e2d\u0e01\u0e32\u0e23\u0e44\u0e2b\u0e25\u0e02\u0e2d\u0e07\u0e02\u0e49\u0e2d\u0e21\u0e39\u0e25\u0e17\u0e35\u0e48\u0e44\u0e23\u0e49\u0e23\u0e2d\u0e22\u0e15\u0e48\u0e2d\u0e17\u0e31\u0e48\u0e27\u0e17\u0e31\u0e49\u0e07\u0e2d\u0e07\u0e04\u0e4c\u0e01\u0e23",
+    },
   },
 ];

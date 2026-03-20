@@ -1,46 +1,90 @@
-import type { Project } from "./hardware-projects";
+import type { Project, BilingualCategory } from "./hardware-projects";
+
+export const softwareCategories: BilingualCategory[] = [
+  { en: "All", th: "\u0e17\u0e31\u0e49\u0e07\u0e2b\u0e21\u0e14" },
+  { en: "Enterprise Systems", th: "\u0e23\u0e30\u0e1a\u0e1a\u0e2d\u0e07\u0e04\u0e4c\u0e01\u0e23" },
+  { en: "Monitoring", th: "\u0e23\u0e30\u0e1a\u0e1a\u0e21\u0e2d\u0e19\u0e34\u0e40\u0e15\u0e2d\u0e23\u0e4c" },
+  { en: "Document Management", th: "\u0e08\u0e31\u0e14\u0e01\u0e32\u0e23\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23" },
+  { en: "Web & Mobile", th: "\u0e40\u0e27\u0e47\u0e1a\u0e41\u0e25\u0e30\u0e21\u0e37\u0e2d\u0e16\u0e37\u0e2d" },
+];
 
 export const softwareProjects: Project[] = [
   {
     id: "sw-1",
-    title: "Operation & Maintenance System",
-    description:
-      "Website for Operation & Maintenance, Inventory management, Document management and Monitoring.",
+    title: {
+      en: "Operation & Maintenance System",
+      th: "\u0e23\u0e30\u0e1a\u0e1a\u0e1a\u0e23\u0e34\u0e2b\u0e32\u0e23\u0e07\u0e32\u0e19\u0e41\u0e25\u0e30\u0e0b\u0e48\u0e2d\u0e21\u0e1a\u0e33\u0e23\u0e38\u0e07",
+    },
+    description: {
+      en: "Website for Operation & Maintenance, Inventory management, Document management and Monitoring.",
+      th: "\u0e40\u0e27\u0e47\u0e1a\u0e44\u0e0b\u0e15\u0e4c\u0e2a\u0e33\u0e2b\u0e23\u0e31\u0e1a\u0e01\u0e32\u0e23\u0e1a\u0e23\u0e34\u0e2b\u0e32\u0e23\u0e07\u0e32\u0e19\u0e41\u0e25\u0e30\u0e0b\u0e48\u0e2d\u0e21\u0e1a\u0e33\u0e23\u0e38\u0e07 \u0e01\u0e32\u0e23\u0e08\u0e31\u0e14\u0e01\u0e32\u0e23\u0e04\u0e25\u0e31\u0e07\u0e2a\u0e34\u0e19\u0e04\u0e49\u0e32 \u0e01\u0e32\u0e23\u0e08\u0e31\u0e14\u0e01\u0e32\u0e23\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23 \u0e41\u0e25\u0e30\u0e01\u0e32\u0e23\u0e21\u0e2d\u0e19\u0e34\u0e40\u0e15\u0e2d\u0e23\u0e4c",
+    },
     image: "public/software-pd/product/egat.png",
+    category: "Enterprise Systems",
   },
   {
     id: "sw-2",
-    title: "Blacklist",
-    description:
-      "Website for Monitoring illegal vehicle detection and alert system for expressways.",
+    title: {
+      en: "Blacklist",
+      th: "\u0e23\u0e30\u0e1a\u0e1a\u0e15\u0e23\u0e27\u0e08\u0e08\u0e31\u0e1a\u0e22\u0e32\u0e19\u0e1e\u0e32\u0e2b\u0e19\u0e30\u0e1c\u0e34\u0e14\u0e01\u0e0e\u0e2b\u0e21\u0e32\u0e22",
+    },
+    description: {
+      en: "Website for Monitoring illegal vehicle detection and alert system for expressways.",
+      th: "\u0e40\u0e27\u0e47\u0e1a\u0e44\u0e0b\u0e15\u0e4c\u0e2a\u0e33\u0e2b\u0e23\u0e31\u0e1a\u0e21\u0e2d\u0e19\u0e34\u0e40\u0e15\u0e2d\u0e23\u0e4c\u0e01\u0e32\u0e23\u0e15\u0e23\u0e27\u0e08\u0e08\u0e31\u0e1a\u0e22\u0e32\u0e19\u0e1e\u0e32\u0e2b\u0e19\u0e30\u0e1c\u0e34\u0e14\u0e01\u0e0e\u0e2b\u0e21\u0e32\u0e22\u0e41\u0e25\u0e30\u0e23\u0e30\u0e1a\u0e1a\u0e41\u0e08\u0e49\u0e07\u0e40\u0e15\u0e37\u0e2d\u0e19\u0e1a\u0e19\u0e17\u0e32\u0e07\u0e14\u0e48\u0e27\u0e19",
+    },
     image: "public/software-pd/product/blacklist.png",
+    category: "Monitoring",
   },
   {
     id: "sw-3",
-    title: "Document management",
-    description:
-      "Website for Document management and Digital signature.",
+    title: {
+      en: "Document management",
+      th: "\u0e23\u0e30\u0e1a\u0e1a\u0e08\u0e31\u0e14\u0e01\u0e32\u0e23\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23",
+    },
+    description: {
+      en: "Website for Document management and Digital signature.",
+      th: "\u0e40\u0e27\u0e47\u0e1a\u0e44\u0e0b\u0e15\u0e4c\u0e2a\u0e33\u0e2b\u0e23\u0e31\u0e1a\u0e01\u0e32\u0e23\u0e08\u0e31\u0e14\u0e01\u0e32\u0e23\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23\u0e41\u0e25\u0e30\u0e25\u0e32\u0e22\u0e40\u0e0b\u0e47\u0e19\u0e14\u0e34\u0e08\u0e34\u0e17\u0e31\u0e25",
+    },
     image: "public/software-pd/product/tvop.png",
+    category: "Document Management",
   },
   {
     id: "sw-4",
-    title: "Space Finder",
-    description:
-      "Website for Admin application management and Public application for sale/rent space and event.",
+    title: {
+      en: "Space Finder",
+      th: "Space Finder",
+    },
+    description: {
+      en: "Website for Admin application management and Public application for sale/rent space and event.",
+      th: "\u0e40\u0e27\u0e47\u0e1a\u0e44\u0e0b\u0e15\u0e4c\u0e2a\u0e33\u0e2b\u0e23\u0e31\u0e1a\u0e1a\u0e23\u0e34\u0e2b\u0e32\u0e23\u0e08\u0e31\u0e14\u0e01\u0e32\u0e23\u0e41\u0e2d\u0e1b\u0e1e\u0e25\u0e34\u0e40\u0e04\u0e0a\u0e31\u0e19\u0e41\u0e25\u0e30\u0e41\u0e2d\u0e1b\u0e2a\u0e33\u0e2b\u0e23\u0e31\u0e1a\u0e02\u0e32\u0e22/\u0e40\u0e0a\u0e48\u0e32\u0e1e\u0e37\u0e49\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e30\u0e2d\u0e35\u0e40\u0e27\u0e19\u0e15\u0e4c",
+    },
     image: "public/software-pd/product/donki.png",
+    category: "Web & Mobile",
   },
   {
     id: "sw-5",
-    title: "AI Suggestion Supplier",
-    description:
-      "Website for Vendor management and using AI to select supplier for PO.",
+    title: {
+      en: "AI Suggestion Supplier",
+      th: "\u0e23\u0e30\u0e1a\u0e1a\u0e41\u0e19\u0e30\u0e19\u0e33\u0e0b\u0e31\u0e1e\u0e1e\u0e25\u0e32\u0e22\u0e40\u0e2d\u0e2d\u0e23\u0e4c\u0e14\u0e49\u0e27\u0e22 AI",
+    },
+    description: {
+      en: "Website for Vendor management and using AI to select supplier for PO.",
+      th: "\u0e40\u0e27\u0e47\u0e1a\u0e44\u0e0b\u0e15\u0e4c\u0e2a\u0e33\u0e2b\u0e23\u0e31\u0e1a\u0e01\u0e32\u0e23\u0e08\u0e31\u0e14\u0e01\u0e32\u0e23\u0e1c\u0e39\u0e49\u0e02\u0e32\u0e22\u0e41\u0e25\u0e30\u0e43\u0e0a\u0e49 AI \u0e40\u0e25\u0e37\u0e2d\u0e01\u0e0b\u0e31\u0e1e\u0e1e\u0e25\u0e32\u0e22\u0e40\u0e2d\u0e2d\u0e23\u0e4c\u0e2a\u0e33\u0e2b\u0e23\u0e31\u0e1a\u0e43\u0e1a\u0e2a\u0e31\u0e48\u0e07\u0e0b\u0e37\u0e49\u0e2d",
+    },
     image: "public/software-pd/product/scgp.png",
+    category: "Enterprise Systems",
   },
   {
     id: "sw-6",
-    title: "ACMA - Automated News Monitoring and Analysis System",
-    description:
-      "Website for Automated News Monitoring and Analysis System for the Royal Thai Air Force.",
+    title: {
+      en: "ACMA - Automated News Monitoring and Analysis System",
+      th: "ACMA - \u0e23\u0e30\u0e1a\u0e1a\u0e15\u0e34\u0e14\u0e15\u0e32\u0e21\u0e41\u0e25\u0e30\u0e27\u0e34\u0e40\u0e04\u0e23\u0e32\u0e30\u0e2b\u0e4c\u0e02\u0e48\u0e32\u0e27\u0e2d\u0e31\u0e15\u0e42\u0e19\u0e21\u0e31\u0e15\u0e34",
+    },
+    description: {
+      en: "Website for Automated News Monitoring and Analysis System for the Royal Thai Air Force.",
+      th: "\u0e40\u0e27\u0e47\u0e1a\u0e44\u0e0b\u0e15\u0e4c\u0e2a\u0e33\u0e2b\u0e23\u0e31\u0e1a\u0e23\u0e30\u0e1a\u0e1a\u0e15\u0e34\u0e14\u0e15\u0e32\u0e21\u0e41\u0e25\u0e30\u0e27\u0e34\u0e40\u0e04\u0e23\u0e32\u0e30\u0e2b\u0e4c\u0e02\u0e48\u0e32\u0e27\u0e2d\u0e31\u0e15\u0e42\u0e19\u0e21\u0e31\u0e15\u0e34\u0e2a\u0e33\u0e2b\u0e23\u0e31\u0e1a\u0e01\u0e2d\u0e07\u0e17\u0e31\u0e1e\u0e2d\u0e32\u0e01\u0e32\u0e28",
+    },
     image: "public/software-pd/product/acma.png",
+    category: "Monitoring",
   },
 ];

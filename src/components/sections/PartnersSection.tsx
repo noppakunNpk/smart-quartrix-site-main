@@ -1,17 +1,20 @@
 import { partners } from "@/data/partners";
+import { useLanguage } from "@/i18n";
 
 export default function PartnersSection() {
+  const { t } = useLanguage();
+
   return (
     <div className="max-w-7xl mx-auto px-6 lg:px-8">
       <div className="text-center mb-14">
         <p className="text-sq-primary font-600 tracking-wide uppercase text-sm mb-3 font-heading">
-          Trusted By Industry Leaders
+          {t.partners.badge}
         </p>
         <h2 className="font-heading text-4xl md:text-5xl font-700 text-sq-text mb-4">
-          Our Partners
+          {t.partners.title}
         </h2>
         <p className="text-sq-text-muted text-lg max-w-2xl mx-auto">
-          We collaborate with leading technology providers to deliver best-in-class solutions.
+          {t.partners.subtitle}
         </p>
       </div>
 

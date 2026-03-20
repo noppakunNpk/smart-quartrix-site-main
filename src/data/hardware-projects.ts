@@ -1,135 +1,303 @@
+export interface BilingualText {
+  en: string;
+  th: string;
+}
+
 export interface Project {
   id: string;
-  title: string;
-  description: string;
+  title: BilingualText;
+  description: BilingualText;
   image: string;
+  category: string; // internal key (English)
 }
+
+export interface BilingualCategory {
+  en: string;
+  th: string;
+}
+
+export const hardwareCategories: BilingualCategory[] = [
+  { en: "All", th: "\u0e17\u0e31\u0e49\u0e07\u0e2b\u0e21\u0e14" },
+  { en: "Inspection", th: "\u0e23\u0e30\u0e1a\u0e1a\u0e15\u0e23\u0e27\u0e08\u0e2a\u0e2d\u0e1a" },
+  { en: "Robotics", th: "\u0e2b\u0e38\u0e48\u0e19\u0e22\u0e19\u0e15\u0e4c" },
+  { en: "Control Systems", th: "\u0e23\u0e30\u0e1a\u0e1a\u0e04\u0e27\u0e1a\u0e04\u0e38\u0e21" },
+  { en: "Material Handling", th: "\u0e23\u0e30\u0e1a\u0e1a\u0e25\u0e33\u0e40\u0e25\u0e35\u0e22\u0e07" },
+  { en: "Manufacturing", th: "\u0e01\u0e32\u0e23\u0e1c\u0e25\u0e34\u0e15" },
+  { en: "Medical", th: "\u0e40\u0e04\u0e23\u0e37\u0e48\u0e2d\u0e07\u0e21\u0e37\u0e2d\u0e41\u0e1e\u0e17\u0e22\u0e4c" },
+];
 
 export const hardwareProjects: Project[] = [
   {
     id: "hw-1",
-    title: "Workpiece inspection machine with camera & scanneer system",
-    description: "High-precision automated optical inspection (AOI) system utilizing advanced sensors for real-time quality control and defect detection.",
+    title: {
+      en: "Workpiece inspection machine with camera & scanner system",
+      th: "\u0e40\u0e04\u0e23\u0e37\u0e48\u0e2d\u0e07\u0e15\u0e23\u0e27\u0e08\u0e2a\u0e2d\u0e1a\u0e0a\u0e34\u0e49\u0e19\u0e07\u0e32\u0e19\u0e14\u0e49\u0e27\u0e22\u0e01\u0e25\u0e49\u0e2d\u0e07\u0e41\u0e25\u0e30\u0e2a\u0e41\u0e01\u0e19\u0e40\u0e19\u0e2d\u0e23\u0e4c",
+    },
+    description: {
+      en: "High-precision automated optical inspection (AOI) system utilizing advanced sensors for real-time quality control and defect detection.",
+      th: "\u0e23\u0e30\u0e1a\u0e1a\u0e15\u0e23\u0e27\u0e08\u0e2a\u0e2d\u0e1a\u0e14\u0e49\u0e27\u0e22\u0e41\u0e2a\u0e07\u0e2d\u0e31\u0e15\u0e42\u0e19\u0e21\u0e31\u0e15\u0e34 (AOI) \u0e04\u0e27\u0e32\u0e21\u0e41\u0e21\u0e48\u0e19\u0e22\u0e33\u0e2a\u0e39\u0e07 \u0e43\u0e0a\u0e49\u0e40\u0e0b\u0e47\u0e19\u0e40\u0e0b\u0e2d\u0e23\u0e4c\u0e02\u0e31\u0e49\u0e19\u0e2a\u0e39\u0e07\u0e2a\u0e33\u0e2b\u0e23\u0e31\u0e1a\u0e04\u0e27\u0e1a\u0e04\u0e38\u0e21\u0e04\u0e38\u0e13\u0e20\u0e32\u0e1e\u0e41\u0e1a\u0e1a\u0e40\u0e23\u0e35\u0e22\u0e25\u0e44\u0e17\u0e21\u0e4c",
+    },
     image: "public/hardware-pd/picture1.png",
+    category: "Inspection",
   },
   {
     id: "hw-2",
-    title: "Robotic system arm",
-    description: "Multi-axis industrial robotic arm engineered for high-speed pick-and-place operations and precision assembly tasks.",
+    title: {
+      en: "Robotic system arm",
+      th: "\u0e41\u0e02\u0e19\u0e01\u0e25\u0e2b\u0e38\u0e48\u0e19\u0e22\u0e19\u0e15\u0e4c\u0e2d\u0e38\u0e15\u0e2a\u0e32\u0e2b\u0e01\u0e23\u0e23\u0e21",
+    },
+    description: {
+      en: "Multi-axis industrial robotic arm engineered for high-speed pick-and-place operations and precision assembly tasks.",
+      th: "\u0e41\u0e02\u0e19\u0e01\u0e25\u0e2b\u0e38\u0e48\u0e19\u0e22\u0e19\u0e15\u0e4c\u0e2d\u0e38\u0e15\u0e2a\u0e32\u0e2b\u0e01\u0e23\u0e23\u0e21\u0e2b\u0e25\u0e32\u0e22\u0e41\u0e01\u0e19 \u0e2d\u0e2d\u0e01\u0e41\u0e1a\u0e1a\u0e2a\u0e33\u0e2b\u0e23\u0e31\u0e1a\u0e07\u0e32\u0e19\u0e2b\u0e22\u0e34\u0e1a\u0e27\u0e32\u0e07\u0e04\u0e27\u0e32\u0e21\u0e40\u0e23\u0e47\u0e27\u0e2a\u0e39\u0e07\u0e41\u0e25\u0e30\u0e1b\u0e23\u0e30\u0e01\u0e2d\u0e1a\u0e0a\u0e34\u0e49\u0e19\u0e2a\u0e48\u0e27\u0e19\u0e41\u0e21\u0e48\u0e19\u0e22\u0e33",
+    },
     image: "public/hardware-pd/picture2.png",
+    category: "Robotics",
   },
   {
     id: "hw-3",
-    title: "Automatic conveyor controller board set",
-    description: "Custom-designed PLC-integrated control unit for managing speed, direction, and synchronized flow across modular conveyor systems.",
+    title: {
+      en: "Automatic conveyor controller board set",
+      th: "\u0e0a\u0e38\u0e14\u0e1a\u0e2d\u0e23\u0e4c\u0e14\u0e04\u0e27\u0e1a\u0e04\u0e38\u0e21\u0e2a\u0e32\u0e22\u0e1e\u0e32\u0e19\u0e25\u0e33\u0e40\u0e25\u0e35\u0e22\u0e07\u0e2d\u0e31\u0e15\u0e42\u0e19\u0e21\u0e31\u0e15\u0e34",
+    },
+    description: {
+      en: "Custom-designed PLC-integrated control unit for managing speed, direction, and synchronized flow across modular conveyor systems.",
+      th: "\u0e0a\u0e38\u0e14\u0e04\u0e27\u0e1a\u0e04\u0e38\u0e21\u0e41\u0e1a\u0e1a PLC \u0e2d\u0e2d\u0e01\u0e41\u0e1a\u0e1a\u0e40\u0e09\u0e1e\u0e32\u0e30 \u0e2a\u0e33\u0e2b\u0e23\u0e31\u0e1a\u0e08\u0e31\u0e14\u0e01\u0e32\u0e23\u0e04\u0e27\u0e32\u0e21\u0e40\u0e23\u0e47\u0e27 \u0e17\u0e34\u0e28\u0e17\u0e32\u0e07 \u0e41\u0e25\u0e30\u0e01\u0e32\u0e23\u0e44\u0e2b\u0e25\u0e02\u0e2d\u0e07\u0e23\u0e30\u0e1a\u0e1a\u0e2a\u0e32\u0e22\u0e1e\u0e32\u0e19\u0e25\u0e33\u0e40\u0e25\u0e35\u0e22\u0e07\u0e41\u0e1a\u0e1a\u0e21\u0e2d\u0e14\u0e39\u0e25\u0e32\u0e23\u0e4c",
+    },
     image: "public/hardware-pd/picture3.png",
+    category: "Control Systems",
   },
   {
     id: "hw-4",
-    title: "Automatic welding & assembly robot",
-    description: "Fully autonomous robotic cell designed for high-strength welding applications and complex structural assembly with minimal human intervention.",
+    title: {
+      en: "Automatic welding & assembly robot",
+      th: "\u0e2b\u0e38\u0e48\u0e19\u0e22\u0e19\u0e15\u0e4c\u0e40\u0e0a\u0e37\u0e48\u0e2d\u0e21\u0e41\u0e25\u0e30\u0e1b\u0e23\u0e30\u0e01\u0e2d\u0e1a\u0e0a\u0e34\u0e49\u0e19\u0e2a\u0e48\u0e27\u0e19\u0e2d\u0e31\u0e15\u0e42\u0e19\u0e21\u0e31\u0e15\u0e34",
+    },
+    description: {
+      en: "Fully autonomous robotic cell designed for high-strength welding applications and complex structural assembly with minimal human intervention.",
+      th: "\u0e40\u0e0b\u0e25\u0e25\u0e4c\u0e2b\u0e38\u0e48\u0e19\u0e22\u0e19\u0e15\u0e4c\u0e2d\u0e31\u0e15\u0e42\u0e19\u0e21\u0e31\u0e15\u0e34\u0e40\u0e15\u0e47\u0e21\u0e23\u0e39\u0e1b\u0e41\u0e1a\u0e1a \u0e2d\u0e2d\u0e01\u0e41\u0e1a\u0e1a\u0e2a\u0e33\u0e2b\u0e23\u0e31\u0e1a\u0e07\u0e32\u0e19\u0e40\u0e0a\u0e37\u0e48\u0e2d\u0e21\u0e04\u0e27\u0e32\u0e21\u0e41\u0e02\u0e47\u0e07\u0e41\u0e23\u0e07\u0e2a\u0e39\u0e07\u0e41\u0e25\u0e30\u0e1b\u0e23\u0e30\u0e01\u0e2d\u0e1a\u0e42\u0e04\u0e23\u0e07\u0e2a\u0e23\u0e49\u0e32\u0e07\u0e0b\u0e31\u0e1a\u0e0b\u0e49\u0e2d\u0e19",
+    },
     image: "public/hardware-pd/picture4.png",
+    category: "Robotics",
   },
   {
     id: "hw-5",
-    title: "Plastic tank cutting & inspection machine & silo-sized cooling unit",
-    description: "Integrated manufacturing station featuring automated cutting precision, ultrasonic inspection, and a heavy-duty thermal management system.",
+    title: {
+      en: "Plastic tank cutting & inspection machine & silo-sized cooling unit",
+      th: "\u0e40\u0e04\u0e23\u0e37\u0e48\u0e2d\u0e07\u0e15\u0e31\u0e14\u0e41\u0e25\u0e30\u0e15\u0e23\u0e27\u0e08\u0e2a\u0e2d\u0e1a\u0e16\u0e31\u0e07\u0e1e\u0e25\u0e32\u0e2a\u0e15\u0e34\u0e01 \u0e1e\u0e23\u0e49\u0e2d\u0e21\u0e23\u0e30\u0e1a\u0e1a\u0e23\u0e30\u0e1a\u0e32\u0e22\u0e04\u0e27\u0e32\u0e21\u0e23\u0e49\u0e2d\u0e19",
+    },
+    description: {
+      en: "Integrated manufacturing station featuring automated cutting precision, ultrasonic inspection, and a heavy-duty thermal management system.",
+      th: "\u0e2a\u0e16\u0e32\u0e19\u0e35\u0e1c\u0e25\u0e34\u0e15\u0e41\u0e1a\u0e1a\u0e04\u0e23\u0e1a\u0e27\u0e07\u0e08\u0e23 \u0e21\u0e35\u0e23\u0e30\u0e1a\u0e1a\u0e15\u0e31\u0e14\u0e2d\u0e31\u0e15\u0e42\u0e19\u0e21\u0e31\u0e15\u0e34\u0e41\u0e21\u0e48\u0e19\u0e22\u0e33 \u0e01\u0e32\u0e23\u0e15\u0e23\u0e27\u0e08\u0e2a\u0e2d\u0e1a\u0e14\u0e49\u0e27\u0e22\u0e2d\u0e31\u0e25\u0e15\u0e23\u0e32\u0e42\u0e0b\u0e19\u0e34\u0e01 \u0e41\u0e25\u0e30\u0e23\u0e30\u0e1a\u0e1a\u0e08\u0e31\u0e14\u0e01\u0e32\u0e23\u0e04\u0e27\u0e32\u0e21\u0e23\u0e49\u0e2d\u0e19\u0e2a\u0e33\u0e2b\u0e23\u0e31\u0e1a\u0e07\u0e32\u0e19\u0e2b\u0e19\u0e31\u0e01",
+    },
     image: "public/hardware-pd/picture5.png",
+    category: "Inspection",
   },
   {
     id: "hw-6",
-    title: "Automatic hdpe pipe winding machine",
-    description: "Specialized winding equipment designed for consistent tension control and efficient spooling of high-density polyethylene (HDPE) piping.",
+    title: {
+      en: "Automatic HDPE pipe winding machine",
+      th: "\u0e40\u0e04\u0e23\u0e37\u0e48\u0e2d\u0e07\u0e21\u0e49\u0e27\u0e19\u0e17\u0e48\u0e2d HDPE \u0e2d\u0e31\u0e15\u0e42\u0e19\u0e21\u0e31\u0e15\u0e34",
+    },
+    description: {
+      en: "Specialized winding equipment designed for consistent tension control and efficient spooling of high-density polyethylene (HDPE) piping.",
+      th: "\u0e2d\u0e38\u0e1b\u0e01\u0e23\u0e13\u0e4c\u0e21\u0e49\u0e27\u0e19\u0e40\u0e09\u0e1e\u0e32\u0e30\u0e17\u0e32\u0e07 \u0e2d\u0e2d\u0e01\u0e41\u0e1a\u0e1a\u0e2a\u0e33\u0e2b\u0e23\u0e31\u0e1a\u0e01\u0e32\u0e23\u0e04\u0e27\u0e1a\u0e04\u0e38\u0e21\u0e41\u0e23\u0e07\u0e15\u0e36\u0e07\u0e2a\u0e21\u0e48\u0e33\u0e40\u0e2a\u0e21\u0e2d\u0e41\u0e25\u0e30\u0e01\u0e32\u0e23\u0e21\u0e49\u0e27\u0e19\u0e17\u0e48\u0e2d HDPE \u0e2d\u0e22\u0e48\u0e32\u0e07\u0e21\u0e35\u0e1b\u0e23\u0e30\u0e2a\u0e34\u0e17\u0e18\u0e34\u0e20\u0e32\u0e1e",
+    },
     image: "public/hardware-pd/picture6.png",
+    category: "Material Handling",
   },
   {
     id: "hw-7",
-    title: "Pad printer machine",
-    description: "Automated precision printing system for high-resolution industrial marking and logo application on irregular surfaces.",
+    title: {
+      en: "Pad printer machine",
+      th: "\u0e40\u0e04\u0e23\u0e37\u0e48\u0e2d\u0e07\u0e1e\u0e34\u0e21\u0e1e\u0e4c\u0e41\u0e1e\u0e14",
+    },
+    description: {
+      en: "Automated precision printing system for high-resolution industrial marking and logo application on irregular surfaces.",
+      th: "\u0e23\u0e30\u0e1a\u0e1a\u0e1e\u0e34\u0e21\u0e1e\u0e4c\u0e2d\u0e31\u0e15\u0e42\u0e19\u0e21\u0e31\u0e15\u0e34\u0e04\u0e27\u0e32\u0e21\u0e41\u0e21\u0e48\u0e19\u0e22\u0e33\u0e2a\u0e39\u0e07 \u0e2a\u0e33\u0e2b\u0e23\u0e31\u0e1a\u0e01\u0e32\u0e23\u0e21\u0e32\u0e23\u0e4c\u0e04\u0e41\u0e25\u0e30\u0e1e\u0e34\u0e21\u0e1e\u0e4c\u0e42\u0e25\u0e42\u0e01\u0e49\u0e1a\u0e19\u0e1e\u0e37\u0e49\u0e19\u0e1c\u0e34\u0e27\u0e44\u0e21\u0e48\u0e2a\u0e21\u0e48\u0e33\u0e40\u0e2a\u0e21\u0e2d",
+    },
     image: "public/hardware-pd/picture7.png",
+    category: "Manufacturing",
   },
   {
     id: "hw-8",
-    title: "Automatic chemical packaging system",
-    description: "Corrosion-resistant automated filling and sealing station engineered for the safe handling and packaging of industrial chemical products.",
+    title: {
+      en: "Automatic chemical packaging system",
+      th: "\u0e23\u0e30\u0e1a\u0e1a\u0e1a\u0e23\u0e23\u0e08\u0e38\u0e2a\u0e32\u0e23\u0e40\u0e04\u0e21\u0e35\u0e2d\u0e31\u0e15\u0e42\u0e19\u0e21\u0e31\u0e15\u0e34",
+    },
+    description: {
+      en: "Corrosion-resistant automated filling and sealing station engineered for the safe handling and packaging of industrial chemical products.",
+      th: "\u0e2a\u0e16\u0e32\u0e19\u0e35\u0e1a\u0e23\u0e23\u0e08\u0e38\u0e41\u0e25\u0e30\u0e1b\u0e34\u0e14\u0e1c\u0e19\u0e36\u0e01\u0e2d\u0e31\u0e15\u0e42\u0e19\u0e21\u0e31\u0e15\u0e34\u0e17\u0e19\u0e01\u0e32\u0e23\u0e01\u0e31\u0e14\u0e01\u0e23\u0e48\u0e2d\u0e19 \u0e2d\u0e2d\u0e01\u0e41\u0e1a\u0e1a\u0e2a\u0e33\u0e2b\u0e23\u0e31\u0e1a\u0e01\u0e32\u0e23\u0e08\u0e31\u0e14\u0e01\u0e32\u0e23\u0e41\u0e25\u0e30\u0e1a\u0e23\u0e23\u0e08\u0e38\u0e2a\u0e32\u0e23\u0e40\u0e04\u0e21\u0e35\u0e2d\u0e22\u0e48\u0e32\u0e07\u0e1b\u0e25\u0e2d\u0e14\u0e20\u0e31\u0e22",
+    },
     image: "public/hardware-pd/picture8.png",
+    category: "Manufacturing",
   },
   {
     id: "hw-9",
-    title: "Belt conveyor",
-    description: "Robust material handling solution featuring high-durability belts and modular framework for seamless production line transport.",
+    title: {
+      en: "Belt conveyor",
+      th: "\u0e2a\u0e32\u0e22\u0e1e\u0e32\u0e19\u0e25\u0e33\u0e40\u0e25\u0e35\u0e22\u0e07\u0e2a\u0e32\u0e22\u0e1e\u0e32\u0e19",
+    },
+    description: {
+      en: "Robust material handling solution featuring high-durability belts and modular framework for seamless production line transport.",
+      th: "\u0e23\u0e30\u0e1a\u0e1a\u0e25\u0e33\u0e40\u0e25\u0e35\u0e22\u0e07\u0e27\u0e31\u0e2a\u0e14\u0e38\u0e17\u0e19\u0e17\u0e32\u0e19 \u0e21\u0e35\u0e2a\u0e32\u0e22\u0e1e\u0e32\u0e19\u0e04\u0e27\u0e32\u0e21\u0e17\u0e19\u0e17\u0e32\u0e19\u0e2a\u0e39\u0e07\u0e41\u0e25\u0e30\u0e42\u0e04\u0e23\u0e07\u0e2a\u0e23\u0e49\u0e32\u0e07\u0e41\u0e1a\u0e1a\u0e21\u0e2d\u0e14\u0e39\u0e25\u0e32\u0e23\u0e4c\u0e2a\u0e33\u0e2b\u0e23\u0e31\u0e1a\u0e2a\u0e32\u0e22\u0e01\u0e32\u0e23\u0e1c\u0e25\u0e34\u0e15",
+    },
     image: "public/hardware-pd/picture9.png",
+    category: "Material Handling",
   },
   {
     id: "hw-10",
-    title: "AGV & conveyer line",
-    description: "Autonomous Guided Vehicle (AGV) integration with synchronized conveyor systems for optimized smart warehouse logistics.",
+    title: {
+      en: "AGV & conveyor line",
+      th: "AGV \u0e41\u0e25\u0e30\u0e2a\u0e32\u0e22\u0e1e\u0e32\u0e19\u0e25\u0e33\u0e40\u0e25\u0e35\u0e22\u0e07",
+    },
+    description: {
+      en: "Autonomous Guided Vehicle (AGV) integration with synchronized conveyor systems for optimized smart warehouse logistics.",
+      th: "\u0e01\u0e32\u0e23\u0e1c\u0e2a\u0e32\u0e19\u0e23\u0e30\u0e1a\u0e1a AGV \u0e01\u0e31\u0e1a\u0e2a\u0e32\u0e22\u0e1e\u0e32\u0e19\u0e25\u0e33\u0e40\u0e25\u0e35\u0e22\u0e07\u0e41\u0e1a\u0e1a\u0e0b\u0e34\u0e07\u0e42\u0e04\u0e23\u0e44\u0e19\u0e0b\u0e4c \u0e2a\u0e33\u0e2b\u0e23\u0e31\u0e1a\u0e23\u0e30\u0e1a\u0e1a\u0e42\u0e25\u0e08\u0e34\u0e2a\u0e15\u0e34\u0e01\u0e2a\u0e4c\u0e04\u0e25\u0e31\u0e07\u0e2a\u0e34\u0e19\u0e04\u0e49\u0e32\u0e2d\u0e31\u0e08\u0e09\u0e23\u0e34\u0e22\u0e30",
+    },
     image: "public/hardware-pd/picture10.png",
+    category: "Material Handling",
   },
   {
     id: "hw-11",
-    title: "Auto load pro-mapper machine & cover",
-    description: "Automated topographical mapping hardware with protective environmental housing for professional industrial scanning applications.",
+    title: {
+      en: "Auto load pro-mapper machine & cover",
+      th: "\u0e40\u0e04\u0e23\u0e37\u0e48\u0e2d\u0e07\u0e41\u0e21\u0e1b\u0e41\u0e1a\u0e1a\u0e2d\u0e31\u0e15\u0e42\u0e19\u0e21\u0e31\u0e15\u0e34\u0e1e\u0e23\u0e49\u0e2d\u0e21\u0e1d\u0e32\u0e04\u0e23\u0e2d\u0e1a",
+    },
+    description: {
+      en: "Automated topographical mapping hardware with protective environmental housing for professional industrial scanning applications.",
+      th: "\u0e2e\u0e32\u0e23\u0e4c\u0e14\u0e41\u0e27\u0e23\u0e4c\u0e2a\u0e41\u0e01\u0e19\u0e41\u0e1c\u0e19\u0e17\u0e35\u0e48\u0e2d\u0e31\u0e15\u0e42\u0e19\u0e21\u0e31\u0e15\u0e34 \u0e1e\u0e23\u0e49\u0e2d\u0e21\u0e15\u0e31\u0e27\u0e40\u0e23\u0e37\u0e2d\u0e19\u0e1b\u0e49\u0e2d\u0e07\u0e01\u0e31\u0e19\u0e2a\u0e20\u0e32\u0e1e\u0e41\u0e27\u0e14\u0e25\u0e49\u0e2d\u0e21\u0e2a\u0e33\u0e2b\u0e23\u0e31\u0e1a\u0e07\u0e32\u0e19\u0e2a\u0e41\u0e01\u0e19\u0e23\u0e30\u0e14\u0e31\u0e1a\u0e2d\u0e38\u0e15\u0e2a\u0e32\u0e2b\u0e01\u0e23\u0e23\u0e21",
+    },
     image: "public/hardware-pd/picture11.png",
+    category: "Inspection",
   },
   {
     id: "hw-12",
-    title: "Bolt assembly",
-    description: "High-torque automated fastening system designed for rapid and consistent bolt assembly in heavy machinery manufacturing.",
+    title: {
+      en: "Bolt assembly",
+      th: "\u0e23\u0e30\u0e1a\u0e1a\u0e1b\u0e23\u0e30\u0e01\u0e2d\u0e1a\u0e2a\u0e25\u0e31\u0e01\u0e40\u0e01\u0e25\u0e35\u0e22\u0e27",
+    },
+    description: {
+      en: "High-torque automated fastening system designed for rapid and consistent bolt assembly in heavy machinery manufacturing.",
+      th: "\u0e23\u0e30\u0e1a\u0e1a\u0e02\u0e31\u0e19\u0e2a\u0e25\u0e31\u0e01\u0e40\u0e01\u0e25\u0e35\u0e22\u0e27\u0e2d\u0e31\u0e15\u0e42\u0e19\u0e21\u0e31\u0e15\u0e34\u0e41\u0e23\u0e07\u0e1a\u0e34\u0e14\u0e2a\u0e39\u0e07 \u0e2d\u0e2d\u0e01\u0e41\u0e1a\u0e1a\u0e2a\u0e33\u0e2b\u0e23\u0e31\u0e1a\u0e01\u0e32\u0e23\u0e1b\u0e23\u0e30\u0e01\u0e2d\u0e1a\u0e2a\u0e25\u0e31\u0e01\u0e40\u0e01\u0e25\u0e35\u0e22\u0e27\u0e17\u0e35\u0e48\u0e23\u0e27\u0e14\u0e40\u0e23\u0e47\u0e27\u0e41\u0e25\u0e30\u0e2a\u0e21\u0e48\u0e33\u0e40\u0e2a\u0e21\u0e2d\u0e43\u0e19\u0e01\u0e32\u0e23\u0e1c\u0e25\u0e34\u0e15\u0e40\u0e04\u0e23\u0e37\u0e48\u0e2d\u0e07\u0e08\u0e31\u0e01\u0e23\u0e2b\u0e19\u0e31\u0e01",
+    },
     image: "public/hardware-pd/picture12.png",
+    category: "Manufacturing",
   },
   {
     id: "hw-13",
-    title: "Plastic cap sealing machine",
-    description: "High-speed thermal induction sealing system for securing plastic caps with airtight and tamper-evident technology.",
+    title: {
+      en: "Plastic cap sealing machine",
+      th: "\u0e40\u0e04\u0e23\u0e37\u0e48\u0e2d\u0e07\u0e1b\u0e34\u0e14\u0e1d\u0e32\u0e1e\u0e25\u0e32\u0e2a\u0e15\u0e34\u0e01",
+    },
+    description: {
+      en: "High-speed thermal induction sealing system for securing plastic caps with airtight and tamper-evident technology.",
+      th: "\u0e23\u0e30\u0e1a\u0e1a\u0e1b\u0e34\u0e14\u0e1c\u0e19\u0e36\u0e01\u0e14\u0e49\u0e27\u0e22\u0e04\u0e27\u0e32\u0e21\u0e23\u0e49\u0e2d\u0e19\u0e04\u0e27\u0e32\u0e21\u0e40\u0e23\u0e47\u0e27\u0e2a\u0e39\u0e07 \u0e2a\u0e33\u0e2b\u0e23\u0e31\u0e1a\u0e1b\u0e34\u0e14\u0e1d\u0e32\u0e1e\u0e25\u0e32\u0e2a\u0e15\u0e34\u0e01\u0e41\u0e1a\u0e1a\u0e01\u0e31\u0e19\u0e2d\u0e32\u0e01\u0e32\u0e28\u0e41\u0e25\u0e30\u0e1b\u0e49\u0e2d\u0e07\u0e01\u0e31\u0e19\u0e01\u0e32\u0e23\u0e40\u0e1b\u0e34\u0e14",
+    },
     image: "public/hardware-pd/picture13.png",
+    category: "Manufacturing",
   },
   {
     id: "hw-14",
-    title: "Medical machine",
-    description: "Precision-engineered medical device assembly or testing unit compliant with stringent healthcare manufacturing standards.",
+    title: {
+      en: "Medical machine",
+      th: "\u0e40\u0e04\u0e23\u0e37\u0e48\u0e2d\u0e07\u0e21\u0e37\u0e2d\u0e17\u0e32\u0e07\u0e01\u0e32\u0e23\u0e41\u0e1e\u0e17\u0e22\u0e4c",
+    },
+    description: {
+      en: "Precision-engineered medical device assembly or testing unit compliant with stringent healthcare manufacturing standards.",
+      th: "\u0e2d\u0e38\u0e1b\u0e01\u0e23\u0e13\u0e4c\u0e17\u0e32\u0e07\u0e01\u0e32\u0e23\u0e41\u0e1e\u0e17\u0e22\u0e4c\u0e17\u0e35\u0e48\u0e27\u0e34\u0e28\u0e27\u0e01\u0e23\u0e23\u0e21\u0e2d\u0e22\u0e48\u0e32\u0e07\u0e41\u0e21\u0e48\u0e19\u0e22\u0e33 \u0e2a\u0e2d\u0e14\u0e04\u0e25\u0e49\u0e2d\u0e07\u0e01\u0e31\u0e1a\u0e21\u0e32\u0e15\u0e23\u0e10\u0e32\u0e19\u0e01\u0e32\u0e23\u0e1c\u0e25\u0e34\u0e15\u0e14\u0e49\u0e32\u0e19\u0e2a\u0e32\u0e18\u0e32\u0e23\u0e13\u0e2a\u0e38\u0e02\u0e17\u0e35\u0e48\u0e40\u0e02\u0e49\u0e21\u0e07\u0e27\u0e14",
+    },
     image: "public/hardware-pd/picture14.png",
+    category: "Medical",
   },
   {
     id: "hw-15",
-    title: "Suction catheter assemble machine",
-    description: "Sterile-environment assembly station for high-precision medical catheter production, ensuring 100% component alignment.",
+    title: {
+      en: "Suction catheter assembly machine",
+      th: "\u0e40\u0e04\u0e23\u0e37\u0e48\u0e2d\u0e07\u0e1b\u0e23\u0e30\u0e01\u0e2d\u0e1a\u0e2a\u0e32\u0e22\u0e2a\u0e27\u0e19\u0e14\u0e39\u0e14",
+    },
+    description: {
+      en: "Sterile-environment assembly station for high-precision medical catheter production, ensuring 100% component alignment.",
+      th: "\u0e2a\u0e16\u0e32\u0e19\u0e35\u0e1b\u0e23\u0e30\u0e01\u0e2d\u0e1a\u0e43\u0e19\u0e2a\u0e20\u0e32\u0e1e\u0e41\u0e27\u0e14\u0e25\u0e49\u0e2d\u0e21\u0e1b\u0e25\u0e2d\u0e14\u0e40\u0e0a\u0e37\u0e49\u0e2d \u0e2a\u0e33\u0e2b\u0e23\u0e31\u0e1a\u0e1c\u0e25\u0e34\u0e15\u0e2a\u0e32\u0e22\u0e2a\u0e27\u0e19\u0e14\u0e39\u0e14\u0e04\u0e27\u0e32\u0e21\u0e41\u0e21\u0e48\u0e19\u0e22\u0e33\u0e2a\u0e39\u0e07 \u0e23\u0e31\u0e1a\u0e1b\u0e23\u0e30\u0e01\u0e31\u0e19\u0e01\u0e32\u0e23\u0e08\u0e31\u0e14\u0e41\u0e19\u0e27\u0e0a\u0e34\u0e49\u0e19\u0e2a\u0e48\u0e27\u0e19 100%",
+    },
     image: "public/hardware-pd/picture15.png",
+    category: "Medical",
   },
   {
     id: "hw-16",
-    title: "Ultrasonic cleaning machine",
-    description: "Industrial-grade ultrasonic transducer system for deep-cleansing precision parts and delicate engineering components.",
+    title: {
+      en: "Ultrasonic cleaning machine",
+      th: "\u0e40\u0e04\u0e23\u0e37\u0e48\u0e2d\u0e07\u0e25\u0e49\u0e32\u0e07\u0e2d\u0e31\u0e25\u0e15\u0e23\u0e32\u0e42\u0e0b\u0e19\u0e34\u0e01",
+    },
+    description: {
+      en: "Industrial-grade ultrasonic transducer system for deep-cleansing precision parts and delicate engineering components.",
+      th: "\u0e23\u0e30\u0e1a\u0e1a\u0e17\u0e23\u0e32\u0e19\u0e2a\u0e14\u0e34\u0e27\u0e40\u0e0b\u0e2d\u0e23\u0e4c\u0e2d\u0e31\u0e25\u0e15\u0e23\u0e32\u0e42\u0e0b\u0e19\u0e34\u0e01\u0e23\u0e30\u0e14\u0e31\u0e1a\u0e2d\u0e38\u0e15\u0e2a\u0e32\u0e2b\u0e01\u0e23\u0e23\u0e21 \u0e2a\u0e33\u0e2b\u0e23\u0e31\u0e1a\u0e17\u0e33\u0e04\u0e27\u0e32\u0e21\u0e2a\u0e30\u0e2d\u0e32\u0e14\u0e0a\u0e34\u0e49\u0e19\u0e2a\u0e48\u0e27\u0e19\u0e41\u0e21\u0e48\u0e19\u0e22\u0e33\u0e41\u0e25\u0e30\u0e0a\u0e34\u0e49\u0e19\u0e2a\u0e48\u0e27\u0e19\u0e27\u0e34\u0e28\u0e27\u0e01\u0e23\u0e23\u0e21\u0e25\u0e30\u0e40\u0e2d\u0e35\u0e22\u0e14",
+    },
     image: "public/hardware-pd/picture16.png",
+    category: "Manufacturing",
   },
   {
     id: "hw-17",
-    title: "Fabric cutting machine",
-    description: "Automated CNC laser or blade cutting system for high-volume textile processing with minimal material waste.",
+    title: {
+      en: "Fabric cutting machine",
+      th: "\u0e40\u0e04\u0e23\u0e37\u0e48\u0e2d\u0e07\u0e15\u0e31\u0e14\u0e1c\u0e49\u0e32",
+    },
+    description: {
+      en: "Automated CNC laser or blade cutting system for high-volume textile processing with minimal material waste.",
+      th: "\u0e23\u0e30\u0e1a\u0e1a\u0e15\u0e31\u0e14 CNC \u0e40\u0e25\u0e40\u0e0b\u0e2d\u0e23\u0e4c\u0e2b\u0e23\u0e37\u0e2d\u0e43\u0e1a\u0e21\u0e35\u0e14\u0e2d\u0e31\u0e15\u0e42\u0e19\u0e21\u0e31\u0e15\u0e34 \u0e2a\u0e33\u0e2b\u0e23\u0e31\u0e1a\u0e01\u0e32\u0e23\u0e1c\u0e25\u0e34\u0e15\u0e2a\u0e34\u0e48\u0e07\u0e17\u0e2d\u0e1b\u0e23\u0e34\u0e21\u0e32\u0e13\u0e21\u0e32\u0e01\u0e42\u0e14\u0e22\u0e2a\u0e39\u0e0d\u0e40\u0e2a\u0e35\u0e22\u0e27\u0e31\u0e2a\u0e14\u0e38\u0e19\u0e49\u0e2d\u0e22\u0e17\u0e35\u0e48\u0e2a\u0e38\u0e14",
+    },
     image: "public/hardware-pd/picture17.png",
+    category: "Manufacturing",
   },
   {
     id: "hw-18",
-    title: "Block alloy",
-    description: "Specialized material handling and processing equipment for high-grade alloy blocks in metallurgical applications.",
+    title: {
+      en: "Block alloy",
+      th: "\u0e1a\u0e25\u0e47\u0e2d\u0e01\u0e42\u0e25\u0e2b\u0e30\u0e1c\u0e2a\u0e21",
+    },
+    description: {
+      en: "Specialized material handling and processing equipment for high-grade alloy blocks in metallurgical applications.",
+      th: "\u0e2d\u0e38\u0e1b\u0e01\u0e23\u0e13\u0e4c\u0e08\u0e31\u0e14\u0e01\u0e32\u0e23\u0e41\u0e25\u0e30\u0e41\u0e1b\u0e23\u0e23\u0e39\u0e1b\u0e27\u0e31\u0e2a\u0e14\u0e38\u0e40\u0e09\u0e1e\u0e32\u0e30\u0e17\u0e32\u0e07 \u0e2a\u0e33\u0e2b\u0e23\u0e31\u0e1a\u0e1a\u0e25\u0e47\u0e2d\u0e01\u0e42\u0e25\u0e2b\u0e30\u0e1c\u0e2a\u0e21\u0e40\u0e01\u0e23\u0e14\u0e2a\u0e39\u0e07\u0e43\u0e19\u0e07\u0e32\u0e19\u0e42\u0e25\u0e2b\u0e30\u0e27\u0e34\u0e17\u0e22\u0e32",
+    },
     image: "public/hardware-pd/picture18.png",
+    category: "Manufacturing",
   },
   {
     id: "hw-19",
-    title: "Conveyer belt for frozen food",
-    description: "Sanitary-grade food transport system designed for ultra-low temperature environments and easy wash-down compliance.",
+    title: {
+      en: "Conveyor belt for frozen food",
+      th: "\u0e2a\u0e32\u0e22\u0e1e\u0e32\u0e19\u0e25\u0e33\u0e40\u0e25\u0e35\u0e22\u0e07\u0e2a\u0e33\u0e2b\u0e23\u0e31\u0e1a\u0e2d\u0e32\u0e2b\u0e32\u0e23\u0e41\u0e0a\u0e48\u0e41\u0e02\u0e47\u0e07",
+    },
+    description: {
+      en: "Sanitary-grade food transport system designed for ultra-low temperature environments and easy wash-down compliance.",
+      th: "\u0e23\u0e30\u0e1a\u0e1a\u0e25\u0e33\u0e40\u0e25\u0e35\u0e22\u0e07\u0e2d\u0e32\u0e2b\u0e32\u0e23\u0e23\u0e30\u0e14\u0e31\u0e1a\u0e2a\u0e38\u0e02\u0e2d\u0e19\u0e32\u0e21\u0e31\u0e22 \u0e2d\u0e2d\u0e01\u0e41\u0e1a\u0e1a\u0e2a\u0e33\u0e2b\u0e23\u0e31\u0e1a\u0e2a\u0e20\u0e32\u0e1e\u0e41\u0e27\u0e14\u0e25\u0e49\u0e2d\u0e21\u0e2d\u0e38\u0e13\u0e2b\u0e20\u0e39\u0e21\u0e34\u0e15\u0e48\u0e33\u0e21\u0e32\u0e01\u0e41\u0e25\u0e30\u0e17\u0e33\u0e04\u0e27\u0e32\u0e21\u0e2a\u0e30\u0e2d\u0e32\u0e14\u0e07\u0e48\u0e32\u0e22",
+    },
     image: "public/hardware-pd/picture19.png",
+    category: "Material Handling",
   },
   {
     id: "hw-20",
-    title: "Generator-r control panel",
-    description: "Comprehensive power management interface for industrial generator units, featuring real-time load monitoring and failsafe systems.",
+    title: {
+      en: "Generator control panel",
+      th: "\u0e41\u0e1c\u0e07\u0e04\u0e27\u0e1a\u0e04\u0e38\u0e21\u0e40\u0e04\u0e23\u0e37\u0e48\u0e2d\u0e07\u0e01\u0e33\u0e40\u0e19\u0e34\u0e14\u0e44\u0e1f\u0e1f\u0e49\u0e32",
+    },
+    description: {
+      en: "Comprehensive power management interface for industrial generator units, featuring real-time load monitoring and failsafe systems.",
+      th: "\u0e2d\u0e34\u0e19\u0e40\u0e15\u0e2d\u0e23\u0e4c\u0e40\u0e1f\u0e0b\u0e01\u0e32\u0e23\u0e08\u0e31\u0e14\u0e01\u0e32\u0e23\u0e1e\u0e25\u0e31\u0e07\u0e07\u0e32\u0e19\u0e04\u0e23\u0e1a\u0e27\u0e07\u0e08\u0e23 \u0e21\u0e35\u0e23\u0e30\u0e1a\u0e1a\u0e21\u0e2d\u0e19\u0e34\u0e40\u0e15\u0e2d\u0e23\u0e4c\u0e42\u0e2b\u0e25\u0e14\u0e41\u0e1a\u0e1a\u0e40\u0e23\u0e35\u0e22\u0e25\u0e44\u0e17\u0e21\u0e4c\u0e41\u0e25\u0e30\u0e23\u0e30\u0e1a\u0e1a\u0e1b\u0e49\u0e2d\u0e07\u0e01\u0e31\u0e19\u0e04\u0e27\u0e32\u0e21\u0e1c\u0e34\u0e14\u0e1e\u0e25\u0e32\u0e14",
+    },
     image: "public/hardware-pd/picture20.png",
+    category: "Control Systems",
   },
   {
     id: "hw-21",
-    title: "Control panel",
-    description: "Customized electrical control enclosure with integrated HMI and circuit protection for centralized industrial automation.",
+    title: {
+      en: "Control panel",
+      th: "\u0e41\u0e1c\u0e07\u0e04\u0e27\u0e1a\u0e04\u0e38\u0e21\u0e44\u0e1f\u0e1f\u0e49\u0e32",
+    },
+    description: {
+      en: "Customized electrical control enclosure with integrated HMI and circuit protection for centralized industrial automation.",
+      th: "\u0e15\u0e39\u0e49\u0e04\u0e27\u0e1a\u0e04\u0e38\u0e21\u0e44\u0e1f\u0e1f\u0e49\u0e32\u0e41\u0e1a\u0e1a\u0e01\u0e33\u0e2b\u0e19\u0e14\u0e40\u0e2d\u0e07 \u0e1e\u0e23\u0e49\u0e2d\u0e21 HMI \u0e41\u0e1a\u0e1a\u0e23\u0e27\u0e21\u0e41\u0e25\u0e30\u0e23\u0e30\u0e1a\u0e1a\u0e1b\u0e49\u0e2d\u0e07\u0e01\u0e31\u0e19\u0e27\u0e07\u0e08\u0e23\u0e2a\u0e33\u0e2b\u0e23\u0e31\u0e1a\u0e23\u0e30\u0e1a\u0e1a\u0e2d\u0e31\u0e15\u0e42\u0e19\u0e21\u0e31\u0e15\u0e34\u0e2d\u0e38\u0e15\u0e2a\u0e32\u0e2b\u0e01\u0e23\u0e23\u0e21\u0e41\u0e1a\u0e1a\u0e23\u0e27\u0e21\u0e28\u0e39\u0e19\u0e22\u0e4c",
+    },
     image: "public/hardware-pd/picture21.png",
+    category: "Control Systems",
   },
 ];

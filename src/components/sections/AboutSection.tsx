@@ -1,38 +1,38 @@
 import { Target, Lightbulb, Handshake } from "lucide-react";
-
-const highlights = [
-  {
-    icon: Target,
-    title: "Precision Engineering",
-    text: "We deliver targeted solutions that align technology investments with measurable business outcomes.",
-  },
-  {
-    icon: Lightbulb,
-    title: "Innovation-Driven",
-    text: "From IoT and AI to cloud-native architectures, we bring cutting-edge technology to real-world challenges.",
-  },
-  {
-    icon: Handshake,
-    title: "Partnership Approach",
-    text: "We work alongside your teams — transferring knowledge and building internal capability, not dependency.",
-  },
-];
+import { useLanguage } from "@/i18n";
 
 export default function AboutSection() {
+  const { t } = useLanguage();
+
+  const highlights = [
+    {
+      icon: Target,
+      title: t.about.highlight1Title,
+      text: t.about.highlight1Text,
+    },
+    {
+      icon: Lightbulb,
+      title: t.about.highlight2Title,
+      text: t.about.highlight2Text,
+    },
+    {
+      icon: Handshake,
+      title: t.about.highlight3Title,
+      text: t.about.highlight3Text,
+    },
+  ];
+
   return (
     <div className="max-w-7xl mx-auto px-6 lg:px-8">
       <div className="text-center mb-16">
         <p className="text-sq-primary font-600 tracking-wide uppercase text-sm mb-3 font-heading">
-          About Us
+          {t.about.badge}
         </p>
         <h2 className="font-heading text-4xl md:text-5xl font-700 text-sq-text mb-6">
-          Technology Meets Business
+          {t.about.title}
         </h2>
         <p className="text-sq-text-muted text-lg max-w-3xl mx-auto leading-relaxed">
-          Smart Quartrix bridges the gap between technology and business strategy.
-          With deep expertise across hardware engineering and enterprise software,
-          we help organizations modernize operations, automate processes, and unlock
-          new levels of efficiency.
+          {t.about.description}
         </p>
       </div>
 

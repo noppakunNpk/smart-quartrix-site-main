@@ -1,19 +1,21 @@
 import { Mail, MapPin, Phone } from "lucide-react";
 import { siteConfig } from "@/config/site";
+import { useLanguage } from "@/i18n";
 
 export default function ContactSection() {
+  const { t } = useLanguage();
+
   return (
     <div className="max-w-7xl mx-auto px-6 lg:px-8">
       <div className="text-center mb-14">
         <p className="text-sq-accent font-600 tracking-wide uppercase text-sm mb-3 font-heading">
-          Get Started
+          {t.contact.badge}
         </p>
         <h2 className="font-heading text-4xl md:text-5xl font-700 text-white mb-4">
-          Let&apos;s Work Together
+          {t.contact.title}
         </h2>
         <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-          Ready to transform your operations? Reach out and let&apos;s discuss how we
-          can help.
+          {t.contact.subtitle}
         </p>
       </div>
 
@@ -25,7 +27,7 @@ export default function ContactSection() {
               <Mail className="w-5 h-5 text-sq-accent" />
             </div>
             <div>
-              <h3 className="font-heading font-600 text-white mb-1">Email</h3>
+              <h3 className="font-heading font-600 text-white mb-1">{t.contact.email}</h3>
               <p className="text-gray-400">{siteConfig.contact.email}</p>
             </div>
           </div>
@@ -35,7 +37,7 @@ export default function ContactSection() {
               <Phone className="w-5 h-5 text-sq-accent" />
             </div>
             <div>
-              <h3 className="font-heading font-600 text-white mb-1">Phone</h3>
+              <h3 className="font-heading font-600 text-white mb-1">{t.contact.phone}</h3>
               <p className="text-gray-400">{siteConfig.contact.phone}</p>
             </div>
           </div>
@@ -45,7 +47,7 @@ export default function ContactSection() {
               <MapPin className="w-5 h-5 text-sq-accent" />
             </div>
             <div>
-              <h3 className="font-heading font-600 text-white mb-1">Office</h3>
+              <h3 className="font-heading font-600 text-white mb-1">{t.contact.address}</h3>
               <p className="text-gray-400">{siteConfig.contact.address}</p>
             </div>
           </div>
@@ -58,36 +60,36 @@ export default function ContactSection() {
         >
           <div>
             <label htmlFor="name" className="block text-sm font-500 text-gray-300 mb-2">
-              Name
+              {t.contact.nameLabel}
             </label>
             <input
               type="text"
               id="name"
-              placeholder="Your name"
+              placeholder={t.contact.namePlaceholder}
               className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-gray-500 focus:outline-none focus:border-sq-primary transition-colors"
             />
           </div>
 
           <div>
             <label htmlFor="email" className="block text-sm font-500 text-gray-300 mb-2">
-              Email
+              {t.contact.emailLabel}
             </label>
             <input
               type="email"
               id="email"
-              placeholder="your@email.com"
+              placeholder={t.contact.emailPlaceholder}
               className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-gray-500 focus:outline-none focus:border-sq-primary transition-colors"
             />
           </div>
 
           <div>
             <label htmlFor="message" className="block text-sm font-500 text-gray-300 mb-2">
-              Message
+              {t.contact.messageLabel}
             </label>
             <textarea
               id="message"
               rows={4}
-              placeholder="Tell us about your project..."
+              placeholder={t.contact.messagePlaceholder}
               className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-gray-500 focus:outline-none focus:border-sq-primary transition-colors resize-none"
             />
           </div>
@@ -96,7 +98,7 @@ export default function ContactSection() {
             type="submit"
             className="w-full bg-sq-gradient text-white py-3 rounded-lg font-heading font-600 hover:opacity-90 transition-opacity"
           >
-            Send Message
+            {t.contact.send}
           </button>
         </form>
       </div>

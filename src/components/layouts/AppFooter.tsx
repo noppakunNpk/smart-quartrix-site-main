@@ -1,7 +1,11 @@
-import { Facebook, Linkedin, Twitter } from "lucide-react";
 import { siteConfig } from "@/config/site";
+import { useLanguage } from "@/i18n";
+
+const footerNavKeys = ["about", "services", "hardware", "software"] as const;
 
 export function AppFooter() {
+  const { t } = useLanguage();
+
   return (
     <footer className="bg-sq-navy border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
@@ -19,61 +23,34 @@ export function AppFooter() {
               </span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
-              {siteConfig.description}
+              {t.footer.description}
             </p>
-            <div className="flex gap-3">
-              <a
-                href={siteConfig.social.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="w-4 h-4" />
-              </a>
-              <a
-                href={siteConfig.social.facebook}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-colors"
-                aria-label="Facebook"
-              >
-                <Facebook className="w-4 h-4" />
-              </a>
-              <a
-                href={siteConfig.social.twitter}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-colors"
-                aria-label="Twitter"
-              >
-                <Twitter className="w-4 h-4" />
-              </a>
-            </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-heading font-600 text-white mb-4">Quick Links</h3>
+            <h3 className="font-heading font-600 text-white mb-4">
+              {t.footer.quickLinks}
+            </h3>
             <ul className="space-y-3">
-              {["About", "Services", "Hardware", "Software", "Partners", "Contact"].map(
-                (label) => (
-                  <li key={label}>
-                    <a
-                      href={`#${label.toLowerCase()}`}
-                      className="text-gray-400 hover:text-white text-sm transition-colors"
-                    >
-                      {label}
-                    </a>
-                  </li>
-                )
-              )}
+              {footerNavKeys.map((key) => (
+                <li key={key}>
+                  <a
+                    href={`#${key}`}
+                    className="text-gray-400 hover:text-white text-sm transition-colors"
+                  >
+                    {t.nav[key]}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Contact */}
           <div>
-            <h3 className="font-heading font-600 text-white mb-4">Contact</h3>
+            <h3 className="font-heading font-600 text-white mb-4">
+              {t.footer.contact}
+            </h3>
             <ul className="space-y-3 text-sm text-gray-400">
               <li>{siteConfig.contact.email}</li>
               <li>{siteConfig.contact.phone}</li>
@@ -86,7 +63,7 @@ export function AppFooter() {
       {/* Copyright */}
       <div className="border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-6 text-center text-sm text-gray-500">
-          {siteConfig.copyright}
+          {t.footer.copyright}
         </div>
       </div>
     </footer>
