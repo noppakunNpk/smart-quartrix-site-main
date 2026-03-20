@@ -6,8 +6,8 @@ const navLinks = [
   { label: "Services", href: "#services" },
   { label: "Hardware", href: "#hardware" },
   { label: "Software", href: "#software" },
-  { label: "Partners", href: "#partners" },
-  { label: "Contact", href: "#contact" },
+  // { label: "Partners", href: "#partners" },
+  // { label: "Contact", href: "#contact" },
 ];
 
 const NAVBAR_HEIGHT = 76;
@@ -67,7 +67,11 @@ export function AppNavbar() {
           className="md:hidden p-2 text-gray-300 hover:text-white"
           aria-label="Toggle menu"
         >
-          {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          {mobileOpen ? (
+            <X className="w-6 h-6" />
+          ) : (
+            <Menu className="w-6 h-6" />
+          )}
         </button>
       </div>
 
