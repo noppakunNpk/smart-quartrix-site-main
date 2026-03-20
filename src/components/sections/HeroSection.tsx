@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import { Visualizer } from "@/components/Visualizer";
 
 export default function HeroSection() {
   return (
@@ -34,7 +35,7 @@ export default function HeroSection() {
       <div className="absolute top-1/4 -right-32 w-96 h-96 rounded-full bg-sq-gradient opacity-20 blur-3xl" />
       <div className="absolute -bottom-20 -left-20 w-72 h-72 rounded-full bg-[#7B5EA7] opacity-15 blur-3xl" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full flex flex-col lg:flex-row items-center justify-between gap-16">
         <div className="max-w-3xl">
           {/* Logo */}
           <img
@@ -65,6 +66,11 @@ export default function HeroSection() {
             Get in Touch
             <ArrowRight className="w-5 h-5" />
           </a>
+        </div>
+
+        {/* Visualizer — hidden on mobile/tablet */}
+        <div className="relative hidden lg:block w-[560px] h-[560px] shrink-0">
+          <Visualizer />
         </div>
       </div>
     </div>

@@ -5,8 +5,8 @@ import AboutSection from "@/components/sections/AboutSection";
 import ServicesSection from "@/components/sections/ServicesSection";
 import HardwareProjectsSection from "@/components/sections/HardwareProjectsSection";
 import SoftwareProjectsSection from "@/components/sections/SoftwareProjectsSection";
-import PartnersSection from "@/components/sections/PartnersSection";
-import ContactSection from "@/components/sections/ContactSection";
+// import PartnersSection from "@/components/sections/PartnersSection";
+// import ContactSection from "@/components/sections/ContactSection";
 
 export const Route = createFileRoute("/")({ component: App });
 
@@ -51,13 +51,13 @@ function App() {
         <SoftwareProjectsSection />
       </section>
 
-      <section id="partners" className="py-24 bg-sq-light">
+      {/* <section id="partners" className="py-24 bg-sq-light">
         <PartnersSection />
-      </section>
+      </section> */}
 
-      <section id="contact" className="py-24 bg-sq-navy text-white">
+      {/* <section id="contact" className="py-24 bg-sq-navy text-white">
         <ContactSection />
-      </section>
+      </section> */}
     </div>
   );
 }
