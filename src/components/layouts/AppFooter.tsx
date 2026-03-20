@@ -10,7 +10,7 @@ export function AppFooter() {
           <div>
             <div className="flex items-center gap-3 mb-4">
               <img
-                src="/images/logo.png"
+                src="/public/logo2.jpg"
                 alt="Smart Quartrix"
                 className="h-10 w-auto"
               />

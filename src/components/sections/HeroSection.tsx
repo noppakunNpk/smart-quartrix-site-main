@@ -39,7 +39,7 @@ export default function HeroSection() {
         <div className="max-w-3xl">
           {/* Logo */}
           <img
-            src="/images/logo.png"
+            src="/public/logo2.jpg"
             alt="Smart Quartrix"
             className="h-20 w-auto mb-8"
           />

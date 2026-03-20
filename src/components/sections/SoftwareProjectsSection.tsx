@@ -18,37 +18,38 @@ export default function SoftwareProjectsSection() {
       </div>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {softwareProjects.map((project) => (
-          <div
-            key={project.id}
-            className="bg-white rounded-xl overflow-hidden border border-gray-100 hover:shadow-lg transition-shadow"
-          >
-            {/* Gradient placeholder image area */}
-            <div className="h-48 bg-gradient-to-br from-[#0a1628] via-[#0e2a4a] to-[#1a1a3a] flex items-center justify-center relative">
-              <div className="absolute inset-0 opacity-10">
-                <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-                  <defs>
-                    <pattern id="sw-dots" x="0" y="0" width="16" height="16" patternUnits="userSpaceOnUse">
-                      <circle cx="8" cy="8" r="1" fill="#00AAFF" />
-                    </pattern>
-                  </defs>
-                  <rect width="100%" height="100%" fill="url(#sw-dots)" />
-                </svg>
-              </div>
-              <Code2 className="w-12 h-12 text-sq-accent opacity-60" />
-            </div>
-
-            <div className="p-6">
-              <h3 className="font-heading text-lg font-600 text-sq-text mb-2">
-                {project.title}
-              </h3>
-              <p className="text-sq-text-muted text-sm leading-relaxed">
-                {project.description}
-              </p>
-            </div>
+  {softwareProjects.map((project) => (
+    <div
+      key={project.id}
+      className="bg-white rounded-xl overflow-hidden border border-gray-100 hover:shadow-lg transition-shadow"
+    >
+      {/* เปลี่ยนจาก Gradient Placeholder เป็น Tag <img> */}
+      <div className="h-48 overflow-hidden bg-gray-100 flex items-center justify-center">
+        {project.image ? (
+          <img 
+            src={project.image.replace('public/', '/')} // ลบ public/ ออกเพื่อให้ Next.js/React อ่านจาก root public folder ได้ถูกต้อง
+            alt={project.title}
+            className="w-full h-full object-cover" 
+          />
+        ) : (
+          /* กรณีไม่มีรูป ให้แสดง Placeholder เดิมป้องกัน Error */
+          <div className="w-full h-full bg-gradient-to-br from-[#0a1628] to-[#1a1a3a] flex items-center justify-center">
+            <Code2 className="w-12 h-12 text-sq-accent opacity-60" />
           </div>
-        ))}
+        )}
       </div>
+
+      <div className="p-6">
+        <h3 className="font-heading text-lg font-600 text-sq-text mb-2">
+          {project.title}
+        </h3>
+        <p className="text-sq-text-muted text-sm leading-relaxed">
+          {project.description}
+        </p>
+      </div>
+    </div>
+  ))}
+</div>
     </div>
   );
 }

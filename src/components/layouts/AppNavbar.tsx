@@ -38,7 +38,7 @@ export function AppNavbar() {
           className="flex items-center gap-3"
         >
           <img
-            src="/images/logo.png"
+            src="/public/logo2.jpg"
             alt="Smart Quartrix"
             className="h-10 w-auto"
           />

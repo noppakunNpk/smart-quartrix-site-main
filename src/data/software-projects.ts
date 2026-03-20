@@ -3,44 +3,44 @@ import type { Project } from "./hardware-projects";
 export const softwareProjects: Project[] = [
   {
     id: "sw-1",
-    title: "ERP Integration Platform",
+    title: "Operation & Maintenance System",
     description:
-      "Unified middleware connecting disparate ERP systems across multinational operations, streamlining data flow and reducing manual reconciliation.",
-    image: "/images/software/project-1.jpg",
+      "Website for Operation & Maintenance, Inventory management, Document management and Monitoring.",
+    image: "public/software-pd/product/egat.png",
   },
   {
     id: "sw-2",
-    title: "Supply Chain Analytics Dashboard",
+    title: "Blacklist",
     description:
-      "Real-time analytics platform providing end-to-end supply chain visibility with predictive demand forecasting and risk assessment.",
-    image: "/images/software/project-2.jpg",
+      "Website for Monitoring illegal vehicle detection and alert system for expressways.",
+    image: "public/software-pd/product/blacklist.png",
   },
   {
     id: "sw-3",
-    title: "AI Document Processing System",
+    title: "Document management",
     description:
-      "Intelligent document extraction and classification system processing thousands of invoices, contracts, and forms daily with 98% accuracy.",
-    image: "/images/software/project-3.jpg",
+      "Website for Document management and Digital signature.",
+    image: "public/software-pd/product/tvop.png",
   },
   {
     id: "sw-4",
-    title: "Cloud Migration Framework",
+    title: "Space Finder",
     description:
-      "Comprehensive migration toolkit and methodology for transitioning legacy on-premise applications to cloud-native architectures.",
-    image: "/images/software/project-4.jpg",
+      "Website for Admin application management and Public application for sale/rent space and event.",
+    image: "public/software-pd/product/donki.png",
   },
   {
     id: "sw-5",
-    title: "Real-time Inventory Management",
+    title: "AI Suggestion Supplier",
     description:
-      "Multi-warehouse inventory system with real-time stock tracking, automated reorder triggers, and cross-location optimization.",
-    image: "/images/software/project-5.jpg",
+      "Website for Vendor management and using AI to select supplier for PO.",
+    image: "public/software-pd/product/scgp.png",
   },
   {
     id: "sw-6",
-    title: "Predictive Maintenance Platform",
+    title: "ACMA - Automated News Monitoring and Analysis System",
     description:
-      "ML-powered platform analyzing sensor data to predict equipment failures before they occur, reducing unplanned downtime by 60%.",
-    image: "/images/software/project-6.jpg",
+      "Website for Automated News Monitoring and Analysis System for the Royal Thai Air Force.",
+    image: "public/software-pd/product/acma.png",
   },
 ];
